@@ -7371,3 +7371,428 @@ Processing by StaticPagesController#home as HTML
   Rendered layouts/_header.html.erb (0.5ms)
   Rendered layouts/_footer.html.erb (0.1ms)
 Completed 200 OK in 199ms (Views: 192.9ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-21 10:23:02 +0700
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 102]]
+  Rendered shared/_user_info.html.erb (0.3ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?  [["follower_id", 102]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 102]]
+  Rendered shared/_stats.html.erb (5.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_entry_form.html.erb (1.7ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "entries" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 102)
+                     OR user_id = 102)
+  [1m[36mEntry Load (0.5ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 102)
+                     OR user_id = 102)  ORDER BY "entries"."created_at" DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "entries" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 102)
+                     OR user_id = 102)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 102]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 305]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.6ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 296]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 290]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 284]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 278]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_comment_form.html.erb (2.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 272]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 266]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 260]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (2.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 254]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 248]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 242]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 236]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_comment_form.html.erb (2.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 230]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 224]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 218]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 212]]
+  Rendered collection (0.3ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 206]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 200]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 194]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_comment_form.html.erb (3.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 188]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (2.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 182]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 176]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_comment_form.html.erb (3.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 170]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 164]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 158]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 152]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 146]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 140]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 134]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_comment_form.html.erb (3.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 128]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.6ms)
+  Rendered entries/_entry.html.erb (147.0ms)
+  Rendered shared/_feed.html.erb (150.8ms)
+  Rendered static_pages/home.html.erb within layouts/application (162.2ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 224ms (Views: 218.4ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/entries" for 127.0.0.1 at 2016-09-21 10:23:14 +0700
+Processing by EntriesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bZYrYWygQeuSbT/njo7LR9CcT4G+8XgimcxTjtY7l/744mtpogXcXQsDkQKPWkx71ERCDAal5ydoYZxsVYKDCg==", "entry"=>{"title"=>"nn", "body"=>"nn", "picture"=>#<ActionDispatch::Http::UploadedFile:0x007f57a05c5680 @tempfile=#<Tempfile:/tmp/RackMultipart20160921-6001-1104abi.jpg>, @original_filename="932c0bee9b04705a2915.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"entry[picture]\"; filename=\"932c0bee9b04705a2915.jpg\"\r\nContent-Type: image/jpeg\r\n">}, "commit"=>"Post"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 102]]
+  [1m[35m (0.1ms)[0m  begin transaction
+  [1m[36mSQL (0.1ms)[0m  [1mINSERT INTO "entries" ("title", "body", "picture", "user_id", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?)[0m  [["title", "nn"], ["body", "nn"], ["picture", "932c0bee9b04705a2915.jpg"], ["user_id", 102], ["created_at", "2016-09-21 03:23:15.192090"], ["updated_at", "2016-09-21 03:23:15.192090"]]
+  [1m[35m (84.8ms)[0m  commit transaction
+Redirected to http://localhost:3000/
+Completed 302 Found in 524ms (ActiveRecord: 85.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2016-09-21 10:23:15 +0700
+Processing by StaticPagesController#home as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 102]]
+  Rendered shared/_user_info.html.erb (1.1ms)
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."followed_id" WHERE "relationships"."follower_id" = ?  [["follower_id", 102]]
+  [1m[36m (0.1ms)[0m  [1mSELECT COUNT(*) FROM "users" INNER JOIN "relationships" ON "users"."id" = "relationships"."follower_id" WHERE "relationships"."followed_id" = ?[0m  [["followed_id", 102]]
+  Rendered shared/_stats.html.erb (2.1ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_entry_form.html.erb (1.2ms)
+  [1m[35m (0.2ms)[0m  SELECT COUNT(*) FROM "entries" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 102)
+                     OR user_id = 102)
+  [1m[36mEntry Load (0.4ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 102)
+                     OR user_id = 102)  ORDER BY "entries"."created_at" DESC LIMIT 30 OFFSET 0[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT COUNT(*) FROM "entries" WHERE (user_id IN (SELECT followed_id FROM relationships
+                     WHERE  follower_id = 102)
+                     OR user_id = 102)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 102]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 306]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.2ms)
+  Rendered shared/_comment_form.html.erb (3.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 102]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 305]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.3ms)
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 296]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 290]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_comment_form.html.erb (2.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 284]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 278]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_comment_form.html.erb (1.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 272]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 266]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_comment_form.html.erb (1.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 260]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_comment_form.html.erb (2.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 254]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 248]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 242]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 236]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 230]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_comment_form.html.erb (1.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 224]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 218]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_comment_form.html.erb (2.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 212]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 206]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 200]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 194]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 188]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.2ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 182]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 176]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 170]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_comment_form.html.erb (2.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 164]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 158]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.0ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 152]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 146]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_comment_form.html.erb (2.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 140]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 2]]
+  [1m[35mComment Load (0.1ms)[0m  SELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 134]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_comment_form.html.erb (1.3ms)
+  Rendered entries/_entry.html.erb (130.6ms)
+  Rendered shared/_feed.html.erb (134.1ms)
+  Rendered static_pages/home.html.erb within layouts/application (142.2ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.3ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 183ms (Views: 177.0ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/comments" for 127.0.0.1 at 2016-09-21 10:23:18 +0700
+Processing by CommentsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"6fbt7AaY4P7xxFfsqbNneDs0NXdzByck3u46EkwgfQl8gq3kyD19SGiq+QmoZ+BEP+w4+stTuCEvQ/Xwz5lp/Q==", "comment"=>{"content"=>"", "user_id"=>"102", "entry_id"=>"306"}, "commit"=>"Comment"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 102]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."id" = ?  ORDER BY "entries"."created_at" DESC LIMIT 1  [["id", 306]]
+Unpermitted parameter: entry_id
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  rollback transaction
+Redirected to http://localhost:3000/entries/306
+Completed 302 Found in 8ms (ActiveRecord: 0.4ms)
+
+
+Started GET "/entries/306" for 127.0.0.1 at 2016-09-21 10:23:18 +0700
+Processing by EntriesController#show as HTML
+  Parameters: {"id"=>"306"}
+  [1m[36mEntry Load (0.1ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ?  ORDER BY "entries"."created_at" DESC LIMIT 1[0m  [["id", 306]]
+  [1m[35mUser Load (0.0ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 102]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 102]]
+  [1m[35m (0.1ms)[0m  SELECT COUNT(*) FROM "comments" WHERE "comments"."entry_id" = ?  [["entry_id", 306]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = ?[0m  [["entry_id", 306]]
+  Rendered collection (0.0ms)
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_comment_form.html.erb (2.4ms)
+  Rendered entries/show.html.erb within layouts/application (8.8ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 50ms (Views: 48.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/entries/306/edit" for 127.0.0.1 at 2016-09-21 10:23:29 +0700
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"306"}
+  [1m[35mUser Load (0.1ms)[0m  SELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1  [["id", 102]]
+  [1m[36mEntry Load (0.3ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = ? AND "entries"."id" = ?  ORDER BY "entries"."created_at" DESC LIMIT 1[0m  [["user_id", 102], ["id", 306]]
+  [1m[35mEntry Load (0.1ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."id" = ?  ORDER BY "entries"."created_at" DESC LIMIT 1  [["id", 306]]
+  Rendered shared/_error_messages.html.erb (0.0ms)
+  Rendered shared/_entry_form.html.erb (1.6ms)
+  Rendered entries/edit.html.erb within layouts/application (2.5ms)
+  Rendered layouts/_shim.html.erb (0.0ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 44ms (Views: 39.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/entries/306/edit" for 127.0.0.1 at 2016-09-21 10:23:35 +0700
+Processing by EntriesController#edit as HTML
+  Parameters: {"id"=>"306"}
+  [1m[36mUser Load (0.1ms)[0m  [1mSELECT  "users".* FROM "users" WHERE "users"."id" = ? LIMIT 1[0m  [["id", 102]]
+  [1m[35mEntry Load (0.0ms)[0m  SELECT  "entries".* FROM "entries" WHERE "entries"."user_id" = ? AND "entries"."id" = ?  ORDER BY "entries"."created_at" DESC LIMIT 1  [["user_id", 102], ["id", 306]]
+  [1m[36mEntry Load (0.0ms)[0m  [1mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = ?  ORDER BY "entries"."created_at" DESC LIMIT 1[0m  [["id", 306]]
+  Rendered shared/_error_messages.html.erb (0.1ms)
+  Rendered shared/_entry_form.html.erb (2.7ms)
+  Rendered entries/edit.html.erb within layouts/application (3.8ms)
+  Rendered layouts/_shim.html.erb (0.1ms)
+  Rendered layouts/_header.html.erb (0.4ms)
+  Rendered layouts/_footer.html.erb (0.1ms)
+Completed 200 OK in 45ms (Views: 43.2ms | ActiveRecord: 0.2ms)
